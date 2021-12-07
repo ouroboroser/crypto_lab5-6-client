@@ -1,0 +1,46 @@
+.ohnohoney{
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 0;
+    width: 0;
+    z-index: -1;
+    border: 10px solid red;
+}
+
+.myInput { 
+    outline: 0;
+    background: #f2f2f2;
+    width: 90%;
+    border: 0;
+    margin: 0 0 15px;
+    padding: 15px;
+    box-sizing: border-box;
+    font-size: 14px;
+};
+
+.myLink {
+    border: 1px solid red;
+}
+
+.user {
+    box-shadow: 1px 2px 2px rgb(204, 204, 204);
+    margin-bottom: 30px;
+    width: 30%;
+    margin-left: 35%;
+    border-radius: 10px;
+    border: 1px solid rgb(216, 213, 213);
+    padding: 15px;
+
+}
+
+.userTitle {
+    font-weight: bold;
+    padding: 5px;
+    text-align: left;
+}
+
+.userData {
+    text-align: right;
+}

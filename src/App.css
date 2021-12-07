@@ -36,3 +36,17 @@
     transform: rotate(360deg);
   }
 }
+
+.loginForm {
+  border: 1px solid rgb(200, 199, 200);
+  width: 20%;
+  margin-left: 40%;
+  border-radius: 5%;
+  height: 350px;
+  border: 1px solid rgb(207, 207, 207);
+  margin-top: calc(30% - 350px);
+};
+
+.myLink {
+  border: 1px solid red;
+}
