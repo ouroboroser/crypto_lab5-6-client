@@ -23,11 +23,13 @@ export const checkPassword = (password, error) => {
   return error
 };
 
-export const validateEmail = (email) => {
+export const validateEmail = (email, error) => {
   const re = /\S+@\S+\.\S+/;
   const result = re.test(email);
 
   if (!result) {
-    alert('You need to specify correct email');
-  }
+    error = true;
+  };
+
+  return error;
 };

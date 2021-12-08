@@ -2,18 +2,22 @@ import React from "react";
 import { useState } from "react";
 import { validateEmail } from '../helpers';
 import axios from "axios";
+import { Redirect } from "react-router";
 
 export const Data = () => {
   const [phone, setPhone] = useState('');
   const [email, setEmail] = useState('');
   const [address, setAddress] = useState('');
+  const [redirectToUsersList, setRedirectToUserList] = useState(false);
 
   const createUserData = (phone, email, address) => {
       if (phone.length === 0 || email.length === 0 || address.length === 0) {
           alert('You need to specify corret data');
       };
+
+      let error = false;
       
-      validateEmail(email);
+      error = validateEmail(email);
 
       const apiUrl = 'http://localhost:3001/users/data';
 
@@ -24,16 +28,28 @@ export const Data = () => {
           email,
           address,
         };
-      
-      axios
-      .post(apiUrl, data, { headers: { Authorization: `Bearer ${token}`}})
-      .then((response) => {
-        console.log(response);
-      })
-      .catch((e) => {
-        console.log(e);
-      });
+
+      if (!error) {
+        axios
+        .post(apiUrl, data, { headers: { Authorization: `Bearer ${token}`}})
+        .then((response) => {
+          console.log(response);
+          
+          if (response.status === 201) {
+            setRedirectToUserList(true);
+          };
+        })
+        .catch((e) => {
+          console.log(e);
+        });
+      };
   };
+
+  if (redirectToUsersList) {
+    return <Redirect to='/user' />;
+  } else {
+    console.log('not add data');
+  }
 
   return (
     <div className="loginFormWrapper">

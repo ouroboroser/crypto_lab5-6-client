@@ -32,7 +32,10 @@
     border-radius: 10px;
     border: 1px solid rgb(216, 213, 213);
     padding: 15px;
+}
 
+.userKMS {
+    border: 1px solid rgba(46, 128, 235, 0.637);
 }
 
 .userTitle {
@@ -43,4 +46,27 @@
 
 .userData {
     text-align: right;
+}
+
+.userForm {
+    border: 1px solid rgb(214, 214, 214);
+    width: 30%;
+    margin-left: 35%;
+    margin-top: 10%;
+    border-radius: 10px;
+    height: 250px;
+}
+
+.myLink {
+    text-decoration: none;
+    color:black;
+}
+
+.home { 
+    border: 1px solid rgb(214, 214, 214);
+    width: 30%;
+    margin-left: 35%;
+    margin-top: 10%;
+    border-radius: 10px;
+    height: 200px;
 }

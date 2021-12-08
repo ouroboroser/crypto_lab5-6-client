@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { Link, Redirect } from 'react-router-dom';
 import axios from 'axios';
-import { checkPassword } from '../helpers';
 import '../App.css'
 import './forms.css'
 
@@ -12,15 +11,13 @@ export const SignInForm = () => {
 
   let error = false;
 
-  const apiUrl = 'http://localhost:3001/users/sign-up';
+  const apiUrl = 'http://localhost:3001/users/sign-in';
 
   const auth = (username, password) => {
     if (username.length === 0 || password.length === 0) {
       alert('You need to specify corret data');
       error = true;
     };
-
-    error = checkPassword(password, error);
 
     const data = {
       username,
@@ -47,7 +44,7 @@ export const SignInForm = () => {
   };
 
   if (_auth) {
-    return <Redirect to='/data' />;
+    return <Redirect to='/user' />;
   } else {
     console.log('NOT AUTH');
   }
@@ -56,19 +53,13 @@ export const SignInForm = () => {
     <div className = 'loginFormWrapper'>
       <div className = 'loginForm'>
         <div>
-          <p> Login </p>
+          <p> Sing in </p>
           <p> <input className = 'myInput' placeholder='Name' value={username} onChange={(e) => setUsername(e.target.value)}/> </p>
           <p> <input className = 'myInput' placeholder='Password' type='password' value={password} onChange={(e) => setPassword(e.target.value)}/> </p>
-          
-          <label class="ohnohoney" for="name"></label>
-          <input class="ohnohoney" autoComplete="off" type="text" id="name" name="name" placeholder="Your name here" />
-          <label class="ohnohoney" for="email"></label>
-          <input class="ohnohoney" autoComplete="off" type="email" id="email" name="email" placeholder="Your e-mail here" />
-          <button id ='myBtn' onClick={() => auth(username, password)}> Sign in </button>
+          <button id ='myBtn' onClick={() => auth(username, password)}> Sign up </button>
           </div>
-          <p className = 'myLink'> <Link to='/signup' > Create an account </Link> </p>
+          <p className = 'myLink'> <Link to='/sign-up' > Create an account </Link> </p>
       </div>
     </div>
   );
 };
-

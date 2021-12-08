@@ -15,7 +15,6 @@ export const UsersData = () => {
         .then((response) => {
             setUsers(response.data.data);
             setUsersKMS(response.data.dataFromKMS);
-            console.log(response.data);
         })
         .catch((e) => {
             console.log(e);
@@ -38,7 +37,7 @@ export const UsersData = () => {
             })}
             {usersKMS.map(user => {
                 return(
-                    <div className = 'user'>
+                    <div className = 'user userKMS'>
                         <h3> Data using KMS </h3>
                         <p> <span className = 'userTitle'> id: </span> <span className = 'userData'> {user.id} </span> </p>
                         <p> <span className = 'userTitle'> username: </span> <span className = 'userData'> {user.username} </span> </p>
