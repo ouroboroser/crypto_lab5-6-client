@@ -1,6 +1,6 @@
 import React from "react";
 import { useState } from "react";
-import { validateEmail } from '../helpers';
+import { validateEmail } from '../helpers/checkPassword';
 import axios from "axios";
 import { Redirect } from "react-router";
 

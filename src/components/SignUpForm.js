@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Link, Redirect } from 'react-router-dom';
 import axios from 'axios';
-import { checkPassword } from '../helpers';
+import { checkPassword } from '../helpers/checkPassword';
 import '../App.css'
 import './forms.css'
 
