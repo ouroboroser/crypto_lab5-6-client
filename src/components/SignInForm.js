@@ -11,7 +11,7 @@ export const SignInForm = () => {
 
   let error = false;
 
-  const apiUrl = 'http://localhost:3001/users/sign-in';
+  const apiUrl = 'https://studqueue.ninja/users/sign-in';
 
   const auth = (username, password) => {
     if (username.length === 0 || password.length === 0) {

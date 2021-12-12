@@ -19,7 +19,7 @@ export const Data = () => {
       
       error = validateEmail(email);
 
-      const apiUrl = 'http://localhost:3001/users/data';
+      const apiUrl = 'https://studqueue.ninja/users/data';
 
       const token = localStorage.getItem('token');
 

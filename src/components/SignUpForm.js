@@ -13,7 +13,7 @@ export const SignUpForm = () => {
 
   let error = false;
 
-  const apiUrl = 'http://localhost:3001/users/sign-up';
+  const apiUrl = 'https://studqueue.ninja/users/sign-up';
 
   const auth = (username, password, confirmPassword) => {
     if (password !== confirmPassword) {
@@ -67,10 +67,6 @@ export const SignUpForm = () => {
           <p> <input className = 'myInput' placeholder='Password' type='password' value={password} onChange={(e) => setPassword(e.target.value)}/> </p>
           <p> <input className = 'myInput' placeholder='Confirm password' type='password' value={confirmPassword} onChange={(e) => setConfirmPassword(e.target.value)}/> </p>
 
-          <label class="ohnohoney" for="name"></label>
-          <input class="ohnohoney" autoComplete="off" type="text" id="name" name="name" placeholder="Your name here" />
-          <label class="ohnohoney" for="email"></label>
-          <input class="ohnohoney" autoComplete="off" type="email" id="email" name="email" placeholder="Your e-mail here" />
           <button id ='myBtn' onClick={() => auth(username, password, confirmPassword)}> Sign up </button>
           </div>
           <p className = 'myLink'> <Link to='/sign-in' > If you already have an account </Link> </p>

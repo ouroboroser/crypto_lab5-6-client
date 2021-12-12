@@ -17,7 +17,7 @@ export const User = () => {
     useEffect(() => {
         const token = localStorage.getItem('token');
 
-        const apiUrl = 'http://localhost:3001/users/data';
+        const apiUrl = 'https://studqueue.ninja/users/data';
 
         axios
         .get(apiUrl, { headers: { Authorization: `Bearer ${token}`}})

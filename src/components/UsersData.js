@@ -8,7 +8,7 @@ export const UsersData = () => {
     const [usersKMS, setUsersKMS] = useState([]);
 
     useEffect(() => {
-        const apiUrl = 'http://localhost:3001/users/data/list';
+        const apiUrl = 'https://studqueue.ninja/users/data/list';
         
         axios
         .get(apiUrl)
